@@ -16,7 +16,7 @@ using NavDrawer.Helpers;
 namespace NavDrawer.Activities
 {
     [Activity(
-        Label = "Xamarin Nav Drawer",
+        Label = "Xamarin FlyOut menu",
         LaunchMode = LaunchMode.SingleTop,
         Theme = "@style/MyTheme"
     )]
