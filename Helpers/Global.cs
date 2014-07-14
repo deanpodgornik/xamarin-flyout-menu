@@ -20,7 +20,7 @@ namespace NavDrawer.Helpers
         public static string m_DrawerTitle;
         public static string m_Title;
         private static readonly string[] Sections = new[]{
-            "Browse", "Friends"
+            "Activity 1", "Activity 2"
         };
         public static void drawerIni(ActionBarActivity context)
         {
