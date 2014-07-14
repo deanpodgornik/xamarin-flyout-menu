@@ -31,8 +31,8 @@ namespace NavDrawer.Activities
 			this.Title = "Home";
             //Global.m_Title = Global.m_DrawerTitle = this.Title;
 
-            Global.drawerIni(this);
-            Global.m_DrawerToggle.SyncState();
+            FlyOutMenuHelper.drawerIni(this);
+            FlyOutMenuHelper.m_DrawerToggle.SyncState();
 
             //actionbar home button
 			this.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
@@ -52,11 +52,11 @@ namespace NavDrawer.Activities
             {
                 case Resource.Id.flyOutMenuButton:
                     //click on the button "more"
-                    Global.m_Drawer.OpenDrawer(Global.m_DrawerList);
+                    FlyOutMenuHelper.m_Drawer.OpenDrawer(FlyOutMenuHelper.m_DrawerList);
                     return true;
                 default:
                     //click on the app icon in the actionbar
-                    Global.m_Drawer.OpenDrawer(Global.m_DrawerList);
+                    FlyOutMenuHelper.m_Drawer.OpenDrawer(FlyOutMenuHelper.m_DrawerList);
                     return base.OnOptionsItemSelected(item);
             }
         }

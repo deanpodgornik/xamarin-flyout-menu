@@ -11,7 +11,7 @@ using System.Text;
 
 namespace NavDrawer.Helpers
 {
-    class Global
+    class FlyOutMenuHelper
     {
 
         public static DrawerLayout m_Drawer;
@@ -24,14 +24,14 @@ namespace NavDrawer.Helpers
         };
         public static void drawerIni(ActionBarActivity context)
         {
-            Global.m_Drawer = context.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            FlyOutMenuHelper.m_Drawer = context.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             m_DrawerList = context.FindViewById<ListView>(Resource.Id.flyOutMenu);
             m_DrawerList.Adapter = new ArrayAdapter<string>(context, Resource.Layout.flyOutMenuItem_view, Sections);
             //list item click event
-            Global.m_DrawerList.ItemClick += (sender, args) => ListItemClicked(args.Position, context);
-            Global.m_Drawer.SetDrawerShadow(Resource.Drawable.drawer_shadow_dark, (int)GravityCompat.Start);
+            FlyOutMenuHelper.m_DrawerList.ItemClick += (sender, args) => ListItemClicked(args.Position, context);
+            FlyOutMenuHelper.m_Drawer.SetDrawerShadow(Resource.Drawable.drawer_shadow_dark, (int)GravityCompat.Start);
             //DrawerToggle is the animation that happens with the indicator next to the actionbar
-            Global.m_DrawerToggle = new MyActionBarDrawerToggle(context, m_Drawer,
+            FlyOutMenuHelper.m_DrawerToggle = new MyActionBarDrawerToggle(context, m_Drawer,
 													  Resource.Drawable.ic_drawer_dark,
                                                       Resource.String.drawer_open,
                                                       Resource.String.drawer_close);
@@ -61,11 +61,11 @@ namespace NavDrawer.Helpers
             {
                 case 0:
                     context.StartActivity(typeof(Activity1));
-                    Global.m_Drawer.CloseDrawer(Global.m_DrawerList);
+                    FlyOutMenuHelper.m_Drawer.CloseDrawer(FlyOutMenuHelper.m_DrawerList);
                     break;
                 case 1:
                     context.StartActivity(typeof(Activity2));
-                    Global.m_Drawer.CloseDrawer(Global.m_DrawerList);
+                    FlyOutMenuHelper.m_Drawer.CloseDrawer(FlyOutMenuHelper.m_DrawerList);
                     /*
                     fragment = new ProfileFragment();
                     context.SupportFragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, fragment).Commit();

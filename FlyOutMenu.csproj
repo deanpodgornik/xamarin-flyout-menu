@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Activities\Activity2.cs" />
     <Compile Include="Activities\Activity1.cs" />
-    <Compile Include="Helpers\Global.cs" />
+    <Compile Include="Helpers\FlyOutMenuHelper.cs" />
     <Compile Include="Helpers\MyActionBarDrawerToggle.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
